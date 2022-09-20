@@ -1,14 +1,11 @@
-//
-//  main.c
-//  Payment-App
-//
-//  Created by Youssef Khaled on 20/09/2022.
-//
-
 #include <stdio.h>
+#include "Standard Types.h"
+#include "Card/Card.h"
+#include "Terminal/Terminal.h"
+#include "Server/Server.h"
+#include "Application/App.h"
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    printf("Hello, World!\n");
-    return 0;
+int main()
+{
+    
 }

@@ -25,6 +25,15 @@
 /* Begin PBXFileReference section */
 		D87D554228D9C47B001211F8 /* Payment-App */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Payment-App"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D87D554528D9C47B001211F8 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		D87D555428D9C61B001211F8 /* App.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = App.h; sourceTree = "<group>"; };
+		D87D555528D9C61B001211F8 /* App.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = App.c; sourceTree = "<group>"; };
+		D87D555728D9C64D001211F8 /* Card.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
+		D87D555828D9C64D001211F8 /* Card.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Card.c; sourceTree = "<group>"; };
+		D87D555A28D9C670001211F8 /* Server.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Server.h; sourceTree = "<group>"; };
+		D87D555B28D9C670001211F8 /* Server.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Server.c; sourceTree = "<group>"; };
+		D87D555D28D9C67D001211F8 /* Terminal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Terminal.h; sourceTree = "<group>"; };
+		D87D555E28D9C67D001211F8 /* Terminal.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Terminal.c; sourceTree = "<group>"; };
+		D87D556028D9C856001211F8 /* Standard Types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Standard Types.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +67,49 @@
 			isa = PBXGroup;
 			children = (
 				D87D554528D9C47B001211F8 /* main.c */,
+				D87D556028D9C856001211F8 /* Standard Types.h */,
+				D87D555028D9C5D9001211F8 /* Server */,
+				D87D554F28D9C5D5001211F8 /* Card */,
+				D87D554E28D9C5BC001211F8 /* Terminal */,
+				D87D554C28D9C5A5001211F8 /* Application */,
 			);
 			path = "Payment-App";
+			sourceTree = "<group>";
+		};
+		D87D554C28D9C5A5001211F8 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				D87D555428D9C61B001211F8 /* App.h */,
+				D87D555528D9C61B001211F8 /* App.c */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		D87D554E28D9C5BC001211F8 /* Terminal */ = {
+			isa = PBXGroup;
+			children = (
+				D87D555D28D9C67D001211F8 /* Terminal.h */,
+				D87D555E28D9C67D001211F8 /* Terminal.c */,
+			);
+			path = Terminal;
+			sourceTree = "<group>";
+		};
+		D87D554F28D9C5D5001211F8 /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				D87D555728D9C64D001211F8 /* Card.h */,
+				D87D555828D9C64D001211F8 /* Card.c */,
+			);
+			path = Card;
+			sourceTree = "<group>";
+		};
+		D87D555028D9C5D9001211F8 /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				D87D555A28D9C670001211F8 /* Server.h */,
+				D87D555B28D9C670001211F8 /* Server.c */,
+			);
+			path = Server;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
