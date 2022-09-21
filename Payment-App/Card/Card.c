@@ -3,6 +3,7 @@
 
 EN_cardError_t getCardHolderName(ST_cardData_t *cardData)
 {
+    getchar();
     printf("Please Enter the Card Holder Name : ");
     
     uint8_t *ptr , Ch , Length = 0 ;
@@ -37,6 +38,8 @@ EN_cardError_t getCardExpiryDate(ST_cardData_t *cardData)
     
     scanf("%5s",cardData->cardExpirationDate);
     
+    getchar();
+    
     Month = atoi((const char*)cardData->cardExpirationDate);
     Year = atoi((const char*)cardData->cardExpirationDate+3);
     
@@ -54,7 +57,8 @@ EN_cardError_t getCardPAN(ST_cardData_t *cardData)
 {
     printf("Please Enter the Primary Account Number : ");
     
-    uint8_t *ptr , Ch , Length = 0 ;
+    uint8_t *ptr , Ch;
+    uint16_t Length = 0 ;
     
     ptr = cardData->primaryAccountNumber;
     Ch = getchar();
@@ -67,13 +71,22 @@ EN_cardError_t getCardPAN(ST_cardData_t *cardData)
         *ptr='\0';
         Ch = getchar();
     }
-    
-    if(Length >PAN_Min && Length < (PAN_Max+1))
+
+    if(Length >= PAN_Min && Length < (PAN_Max))
     {
         return OK;
     }
     else
     {
-        return WRONG_NAME;
+        return WRONG_PAN;
     }
+}
+
+void Card_Module(ST_cardData_t *cardData)
+{
+    printf("Please Enter Card Data :- \n");
+    printf("---------------------------------------------------------\n");
+    while(getCardHolderName(cardData));
+    while(getCardExpiryDate(cardData));
+    while(getCardPAN(cardData));
 }

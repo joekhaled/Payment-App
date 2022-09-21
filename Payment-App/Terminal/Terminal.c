@@ -19,11 +19,14 @@ EN_terminalError_t isCardExpired(ST_cardData_t *cardData, ST_terminalData_t *ter
     
     if(Card_Exp_Year > Trans_Exp_Year)
     {
-        return OKK;
-    }
-    else if((Card_Exp_Year == Trans_Exp_Year) && (Card_Exp_Month > Trans_Exp_Month))
-    {
-        return OKK;
+        if(Card_Exp_Month > Trans_Exp_Month)
+        {
+            return OKK;
+        }
+        else
+        {
+            return EXPIRED_CARD;
+        }
     }
     else
     {
@@ -98,7 +101,7 @@ EN_terminalError_t isBelowMaxAmount(ST_terminalData_t *termData)
 
 EN_terminalError_t setMaxAmount(ST_terminalData_t *termData)
 {
-    printf("Please Enter the Transaction Amount : ");
+    printf("Please Enter Maxmium Transaction Amount : ");
     scanf("%f",&termData->maxTransAmount);
     
     if(termData->maxTransAmount > 0)
@@ -109,4 +112,35 @@ EN_terminalError_t setMaxAmount(ST_terminalData_t *termData)
     {
         return INVALID_MAX_AMOUNT;
     }
+}
+
+EN_terminalError_t Terminal_Module(ST_cardData_t *cardData, ST_terminalData_t *termData)
+{
+    printf("\n");
+    printf("Please Enter Terminal Data :- \n");
+    printf("---------------------------------------------------------\n");
+    while(getTransactionDate(termData));
+    
+    if(isCardExpired(cardData, termData))
+    {
+        printf("EXPIRED_CARD !");
+        return EXPIRED_CARD;
+    }
+    
+    if(isValidCardPAN(cardData))
+    {
+        printf("INVALID_CARD !");
+        return INVALID_CARD;
+    }
+    
+    while(setMaxAmount(termData));
+    while(getTransactionAmount(termData));
+    
+    if(isBelowMaxAmount(termData))
+    {
+        printf("EXCEED_MAX_AMOUNT !");
+        return EXCEED_MAX_AMOUNT;
+    }
+    
+    return OKK;
 }

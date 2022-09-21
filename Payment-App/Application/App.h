@@ -7,9 +7,10 @@
 #include "../Server/Server.h"
 #include "../File Handling/File_Handling.h"
 
-
 //Function Prototypes
 void appStart(void);
 void appUpdate(void);
+uint8_t Main_Menu(void);
+void New_Operation(void);
 
 #endif
