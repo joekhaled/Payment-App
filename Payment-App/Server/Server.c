@@ -124,7 +124,7 @@ void Search_Transaction(void)
         printf("Card Holder Name : %s\n",transData.cardHolderData.cardHolderName);
         printf("Card Primary Account Number : %s\n",transData.cardHolderData.primaryAccountNumber);
         printf("Card Expiry Date : %s\n\n",transData.cardHolderData.cardExpirationDate);
-        printf("Transaction Amount : %s\n",transData.terminalData.transactionDate);
+        printf("Transaction Amount : %f\n",transData.terminalData.transAmount);
         printf("Transaction Date : %s\n",transData.terminalData.transactionDate);
         printf("Transaction State : ");
         
