@@ -1,6 +1,16 @@
 #ifndef Card_h
 #define Card_h
 
+#include "../Standard Types.h"
+#include <stdio.h>
+#include <stdlib.h>
+
+#define Name_Min 20
+#define Name_Max 24
+
+#define PAN_Min 16
+#define PAN_Max 19
+
 //Enumerations
 typedef enum EN_cardError_t
 {
@@ -19,5 +29,6 @@ typedef struct ST_cardData_t
 EN_cardError_t getCardHolderName(ST_cardData_t *cardData);
 EN_cardError_t getCardExpiryDate(ST_cardData_t *cardData);
 EN_cardError_t getCardPAN(ST_cardData_t *cardData);
+EN_cardError_t isValidCard(ST_cardData_t *cardData);
 
 #endif

@@ -1,6 +1,11 @@
 #ifndef Terminal_h
 #define Terminal_h
 
+#include "../Standard Types.h"
+#include "../Card/Card.h"
+#include<stdio.h>
+#include<time.h>
+
 //Enumerations
 typedef enum EN_terminalError_t
 {
@@ -17,7 +22,7 @@ typedef struct ST_terminalData_t
 
 //Function Prototypes
 EN_terminalError_t getTransactionDate(ST_terminalData_t *termData);
-EN_terminalError_t isCardExpired(ST_cardData_t cardData, ST_terminalData_t termData);
+EN_terminalError_t isCardExpired(ST_cardData_t *cardData, ST_terminalData_t *termData);
 EN_terminalError_t isValidCardPAN(ST_cardData_t *cardData);
 EN_terminalError_t getTransactionAmount(ST_terminalData_t *termData);
 EN_terminalError_t isBelowMaxAmount(ST_terminalData_t *termData);

@@ -1,6 +1,10 @@
 #ifndef Server_h
 #define Server_h
 
+#include "../Standard Types.h"
+#include "../Card/Card.h"
+#include "../Terminal/Terminal.h"
+
 //Enumerations
 typedef enum EN_transState_t
 {
