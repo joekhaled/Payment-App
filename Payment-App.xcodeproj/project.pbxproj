@@ -7,17 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D82DE36928DA70FC00C7E442 /* File_Handling.c in Sources */ = {isa = PBXBuildFile; fileRef = D82DE36828DA70FC00C7E442 /* File_Handling.c */; };
 		D87D554628D9C47B001211F8 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = D87D554528D9C47B001211F8 /* main.c */; };
-		D87D556828D9E5E9001211F8 /* App.c in Sources */ = {isa = PBXBuildFile; fileRef = D87D555528D9C61B001211F8 /* App.c */; };
-		D87D556E28D9E717001211F8 /* Standard Types.h in Sources */ = {isa = PBXBuildFile; fileRef = D87D556028D9C856001211F8 /* Standard Types.h */; };
-		D87D556F28D9E717001211F8 /* Server.h in Sources */ = {isa = PBXBuildFile; fileRef = D87D555A28D9C670001211F8 /* Server.h */; };
-		D87D557028D9E717001211F8 /* Server.c in Sources */ = {isa = PBXBuildFile; fileRef = D87D555B28D9C670001211F8 /* Server.c */; };
-		D87D557128D9E717001211F8 /* Card.h in Sources */ = {isa = PBXBuildFile; fileRef = D87D555728D9C64D001211F8 /* Card.h */; };
-		D87D557228D9E717001211F8 /* Card.c in Sources */ = {isa = PBXBuildFile; fileRef = D87D555828D9C64D001211F8 /* Card.c */; };
-		D87D557328D9E717001211F8 /* Terminal.h in Sources */ = {isa = PBXBuildFile; fileRef = D87D555D28D9C67D001211F8 /* Terminal.h */; };
-		D87D557428D9E717001211F8 /* Terminal.c in Sources */ = {isa = PBXBuildFile; fileRef = D87D555E28D9C67D001211F8 /* Terminal.c */; };
-		D87D557528D9E717001211F8 /* App.h in Sources */ = {isa = PBXBuildFile; fileRef = D87D555428D9C61B001211F8 /* App.h */; };
+		D8AECBDC28DAB334004879B9 /* Server.c in Sources */ = {isa = PBXBuildFile; fileRef = D87D555B28D9C670001211F8 /* Server.c */; };
+		D8AECBDD28DAB334004879B9 /* Card.c in Sources */ = {isa = PBXBuildFile; fileRef = D87D555828D9C64D001211F8 /* Card.c */; };
+		D8AECBDE28DAB334004879B9 /* Terminal.c in Sources */ = {isa = PBXBuildFile; fileRef = D87D555E28D9C67D001211F8 /* Terminal.c */; };
+		D8AECBDF28DAB334004879B9 /* App.c in Sources */ = {isa = PBXBuildFile; fileRef = D87D555528D9C61B001211F8 /* App.c */; };
+		D8AECBE028DAB348004879B9 /* File_Handling.c in Sources */ = {isa = PBXBuildFile; fileRef = D82DE36828DA70FC00C7E442 /* File_Handling.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -48,7 +43,7 @@
 		D87D555B28D9C670001211F8 /* Server.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Server.c; sourceTree = "<group>"; };
 		D87D555D28D9C67D001211F8 /* Terminal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Terminal.h; sourceTree = "<group>"; };
 		D87D555E28D9C67D001211F8 /* Terminal.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Terminal.c; sourceTree = "<group>"; };
-		D87D556028D9C856001211F8 /* Standard Types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Standard Types.h"; sourceTree = "<group>"; };
+		D8AECBDA28DAB253004879B9 /* Standard Types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Standard Types.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,11 +88,11 @@
 			isa = PBXGroup;
 			children = (
 				D87D554528D9C47B001211F8 /* main.c */,
-				D87D556028D9C856001211F8 /* Standard Types.h */,
-				D82DE36628DA70FC00C7E442 /* File Handling */,
-				D87D555028D9C5D9001211F8 /* Server */,
+				D8AECBDA28DAB253004879B9 /* Standard Types.h */,
 				D87D554F28D9C5D5001211F8 /* Card */,
 				D87D554E28D9C5BC001211F8 /* Terminal */,
+				D87D555028D9C5D9001211F8 /* Server */,
+				D82DE36628DA70FC00C7E442 /* File Handling */,
 				D87D554C28D9C5A5001211F8 /* Application */,
 			);
 			path = "Payment-App";
@@ -196,16 +191,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D87D556E28D9E717001211F8 /* Standard Types.h in Sources */,
-				D87D557128D9E717001211F8 /* Card.h in Sources */,
-				D87D557328D9E717001211F8 /* Terminal.h in Sources */,
-				D87D556F28D9E717001211F8 /* Server.h in Sources */,
-				D87D557528D9E717001211F8 /* App.h in Sources */,
-				D87D557228D9E717001211F8 /* Card.c in Sources */,
-				D87D557428D9E717001211F8 /* Terminal.c in Sources */,
-				D82DE36928DA70FC00C7E442 /* File_Handling.c in Sources */,
-				D87D557028D9E717001211F8 /* Server.c in Sources */,
-				D87D556828D9E5E9001211F8 /* App.c in Sources */,
+				D8AECBE028DAB348004879B9 /* File_Handling.c in Sources */,
+				D8AECBDD28DAB334004879B9 /* Card.c in Sources */,
+				D8AECBDE28DAB334004879B9 /* Terminal.c in Sources */,
+				D8AECBDC28DAB334004879B9 /* Server.c in Sources */,
+				D8AECBDF28DAB334004879B9 /* App.c in Sources */,
 				D87D554628D9C47B001211F8 /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -326,6 +316,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				GCC_NO_COMMON_BLOCKS = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -334,6 +325,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				GCC_NO_COMMON_BLOCKS = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

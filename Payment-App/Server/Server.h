@@ -5,6 +5,9 @@
 #include "../Card/Card.h"
 #include "../Terminal/Terminal.h"
 
+#define Number_of_Max_Bank_Customers 15
+#define Number_of_Max_Transactions 15
+
 //Enumerations
 typedef enum EN_transState_t
 {
@@ -31,6 +34,10 @@ typedef struct ST_accountsDB_t
     float balance;
     uint8_t primaryAccountNumber[20];
 }ST_accountsDB_t;
+
+//Global Database Arrays Prototypes
+extern ST_accountsDB_t Accounts_Database[];
+extern ST_transaction_t Transactions_Database[];
 
 //Function Prototypes
 EN_transState_t recieveTransactionData(ST_transaction_t *transData);

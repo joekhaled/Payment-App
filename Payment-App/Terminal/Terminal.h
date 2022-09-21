@@ -3,7 +3,6 @@
 
 #include "../Standard Types.h"
 #include "../Card/Card.h"
-#include<stdio.h>
 #include<time.h>
 
 //Enumerations

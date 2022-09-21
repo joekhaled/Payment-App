@@ -1,121 +1,158 @@
-Card Holder Data :-
---------------------
 Card Holder Name : Youssef_Mohammed
 Card Holder PAN : 5425233430109903
 Card Expiry Date : 12/24
-Terminal Data :- 
------------------
+------------------------------------
 Transaction Amount : 20.50
 Transaction Date : 27/11/2019
-Transaction State : (0)
+------------------------------------
+Transaction State : (2)
+------------------------------------
+Transaction Sequence Number : 1
+
+
 ---------------------------------------------------------------------------------------
-Card Holder Data :- 
---------------------
+
+
 Card Holder Name : Yehia_Mohammed
 Card Holder PAN : 5386970813293971
 Card Expiry Date : 10/25
-Terminal Data :- 
------------------
+------------------------------------
 Transaction Amount : 20.50
 Transaction Date : 27/11/2019
 Transaction State : (1)
+------------------------------------
+Transaction Sequence Number : 2
+
+
 ---------------------------------------------------------------------------------------
-Card Holder Data :- 
---------------------
+
+
 Card Holder Name : Ahmed_Mohammed
 Card Holder PAN : 4916768493199415
 Card Expiry Date : 12/23
-Terminal Data :- 
------------------
+------------------------------------
 Transaction Amount : 2000.00
 Transaction Date : 27/11/2019
 Transaction State : (2)
+------------------------------------
+Transaction Sequence Number : 3
+
+
 ---------------------------------------------------------------------------------------
-Card Holder Data :- 
---------------------
+
+
 Card Holder Name : Youssef_Khaled
 Card Holder PAN : 4716375424530148
 Card Expiry Date : 12/24
-Terminal Data :- 
------------------
+------------------------------------
 Transaction Amount : 20.50
 Transaction Date : 27/11/2019
 Transaction State : (3)
+------------------------------------
+Transaction Sequence Number : 4
+
+
 ---------------------------------------------------------------------------------------
-Card Holder Data :- 
---------------------
+
+
+
 Card Holder Name : Youssef_Yehia
 Card Holder PAN : 4917484589897107
 Card Expiry Date : 12/19
-Terminal Data :- 
------------------
+------------------------------------
 Transaction Amount : 6000.00
 Transaction Date : 27/11/2019
 Transaction State : (1)
+------------------------------------
+Transaction Sequence Number : 5
+
+
 ---------------------------------------------------------------------------------------
-Card Holder Data :- 
---------------------
+
+
+
 Card Holder Name : Joe_Khaled
 Card Holder PAN : 4263982640269299
 Card Expiry Date : 12/22
-Terminal Data :- 
------------------
+------------------------------------
 Transaction Amount : 3200.50
 Transaction Date : 05/07/2021
 Transaction State : (0)
+------------------------------------
+Transaction Sequence Number : 6
+
+
 ---------------------------------------------------------------------------------------
-Card Holder Data :- 
---------------------
+
+
+
 Card Holder Name : Youssef_Mohammed
 Card Holder PAN : 5425233430109903
 Card Expiry Date : 12/24
-Terminal Data :- 
------------------
+------------------------------------
 Transaction Amount : 20.50
 Transaction Date : 27/11/2019
 Transaction State : (0)  
+------------------------------------
+Transaction Sequence Number : 7
+
+
 ---------------------------------------------------------------------------------------
-Card Holder Data :- 
---------------------
+
+
+
 Card Holder Name : Yehia_Mohammed
 Card Holder PAN : 5386970813293971
 Card Expiry Date : 10/25
-Terminal Data :- 
------------------
+------------------------------------
 Transaction Amount : 20.50
 Transaction Date : 27/11/2019
 Transaction State : (0)  
+------------------------------------
+Transaction Sequence Number : 8
 ---------------------------------------------------------------------------------------
-Card Holder Data :- 
---------------------
 Card Holder Name : Ahmed_Mohammed
 Card Holder PAN : 4916768493199415
 Card Expiry Date : 12/23
-Terminal Data :- 
------------------
+------------------------------------
 Transaction Amount : 2000.00
 Transaction Date : 27/11/2019
 Transaction State : (0)  
+------------------------------------
+Transaction Sequence Number : 9
+
+
 ---------------------------------------------------------------------------------------
-Card Holder Data :- 
---------------------
+
+
+
 Card Holder Name : Youssef_Khaled
 Card Holder PAN : 4716375424530148
 Card Expiry Date : 12/24
-Terminal Data :- 
------------------
+------------------------------------
 Transaction Amount : 20.50
 Transaction Date : 27/11/2019
 Transaction State : (0)  
+------------------------------------
+Transaction Sequence Number : 10
+
+
 ---------------------------------------------------------------------------------------
-Card Holder Data :- 
---------------------
+
+
+
 Card Holder Name : Youssef_Yehia
 Card Holder PAN : 4917484589897107
 Card Expiry Date : 12/19
-Terminal Data :- 
------------------
+------------------------------------
 Transaction Amount : 6000.00
 Transaction Date : 27/11/2019
 Transaction State : (0)  
+------------------------------------
+Transaction Sequence Number : 11
+
+
 ---------------------------------------------------------------------------------------
+
+
+
