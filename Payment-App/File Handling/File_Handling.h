@@ -16,6 +16,7 @@ EN_FIle_Handling_t Import_Transactions_Data(ST_transaction_t *Transactions_Datab
 EN_FIle_Handling_t Export_Transactions_Data(ST_transaction_t *Transactions_Database);
 EN_FIle_Handling_t Export_Bank_Server_Data(ST_accountsDB_t *Accounts_Database);
 
-extern int Current_Transaction_Sequence_Num;
+extern uint32_t Current_Transaction_Sequence_Num;
+extern uint32_t Last_Account_Array_Number;
 
 #endif

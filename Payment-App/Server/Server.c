@@ -3,8 +3,9 @@
 ST_accountsDB_t Accounts_Database[Number_of_Max_Bank_Customers];
 ST_transaction_t Transactions_Database[Number_of_Max_Transactions];
 
-int Account_Array_Number=0;
-int Current_Transaction_Sequence_Num = 0;
+uint32_t Last_Account_Array_Number = 0;
+uint32_t Current_Account_Array_Number = 0;
+uint32_t Current_Transaction_Sequence_Num = 0;
 
 EN_transState_t recieveTransactionData(ST_transaction_t *transData)
 {
@@ -31,11 +32,11 @@ EN_transState_t recieveTransactionData(ST_transaction_t *transData)
 EN_serverError_t isValidAccount(ST_cardData_t *cardData)
 {
     
-    for(uint16_t C=0 ; C<Number_of_Max_Bank_Customers ; C++)
+    for(uint16_t C=0 ; (C<Number_of_Max_Bank_Customers) && (Accounts_Database[C].primaryAccountNumber[0] != '\0') ; C++)
     {
         if(!strcmp((const char*) &cardData->primaryAccountNumber , (char*)&Accounts_Database[C].primaryAccountNumber) )
         {
-            Account_Array_Number = C;
+            Current_Account_Array_Number = C;
             return OKkk;
         }
     }
@@ -46,7 +47,7 @@ EN_serverError_t isValidAccount(ST_cardData_t *cardData)
 
 EN_serverError_t isAmountAvailable(ST_terminalData_t *termData)
 {
-    if(termData->transAmount <= Accounts_Database[Account_Array_Number].balance)
+    if(termData->transAmount <= Accounts_Database[Current_Account_Array_Number].balance)
     {
         return OKkk;
     }
@@ -58,7 +59,7 @@ EN_serverError_t isAmountAvailable(ST_terminalData_t *termData)
 
 EN_serverError_t Update_Account_Balance(ST_terminalData_t *termData)
 {
-    Accounts_Database[Account_Array_Number].balance = Accounts_Database[Account_Array_Number].balance - termData->transAmount;
+    Accounts_Database[Current_Account_Array_Number].balance = Accounts_Database[Current_Account_Array_Number].balance - termData->transAmount;
     
     return OKkk;
 }
@@ -172,4 +173,29 @@ void Server_Module(ST_transaction_t *transData)
         printf("Transaction Rejected ! \n");
     }
     printf("Transaction Saved ! \n\n");
+}
+
+void Add_New_Account(void)
+{
+    ST_cardData_t New_ACC;
+    
+    getchar();
+    
+    do
+    {
+        while(getCardPAN(&New_ACC));
+        
+    }while(isValidCardPAN(&New_ACC));
+    
+    if(!(isValidAccount(&New_ACC)))
+    {
+        system("clear");
+        printf("Already Saved in Bank Database! (%d)\n",Current_Account_Array_Number);
+        Add_New_Account();
+    }
+    
+    strcpy((char*) &Accounts_Database[Last_Account_Array_Number].primaryAccountNumber, (const char*) &New_ACC.primaryAccountNumber);
+    
+    printf("Enter Account Balance : ");
+    scanf("%f",&Accounts_Database[Last_Account_Array_Number].balance);
 }

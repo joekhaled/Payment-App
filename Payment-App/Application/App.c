@@ -21,6 +21,11 @@ void appUpdate(void)
              system("clear");
              Search_Transaction();
              break;
+         case '3':
+             system("clear");
+             Add_New_Account();
+             Export_Bank_Server_Data(Accounts_Database);
+             break;
          default:
              appUpdate();
              break;
@@ -34,6 +39,7 @@ uint8_t Main_Menu()
     printf("-----------------------------------\n");
     printf("1)New Operation\n");
     printf("2)Search for Old Transaction\n");
+    printf("3)Add New Account\n");
     printf("\n");
     printf("Choice : ");
     

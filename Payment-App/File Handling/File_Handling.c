@@ -10,6 +10,12 @@ EN_FIle_Handling_t Import_Bank_Server_Data(ST_accountsDB_t *Accounts_Database)
     {
         fscanf(File_Ptr,"PAN : %s , Balance : %f \n",Accounts_Database[C].primaryAccountNumber,&Accounts_Database[C].balance);
         fscanf(File_Ptr,"---------------------------------------------------------------------------------------\n");
+        Last_Account_Array_Number++;
+        
+        if(feof(File_Ptr))
+        {
+            break;
+        }
     }
     
     return fclose(File_Ptr);
@@ -100,7 +106,7 @@ EN_FIle_Handling_t Export_Bank_Server_Data(ST_accountsDB_t *Accounts_Database)
     
     for(int C=0 ; C<Number_of_Max_Bank_Customers ; C++)
     {
-        if(*Accounts_Database[C].primaryAccountNumber == NULL)
+        if(Accounts_Database[C].primaryAccountNumber[0] == '\0')
         {
             break;
         }
