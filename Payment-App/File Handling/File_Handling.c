@@ -4,7 +4,7 @@ EN_FIle_Handling_t Import_Bank_Server_Data(ST_accountsDB_t *Accounts_Database)
 {
     FILE *File_Ptr;
     
-    File_Ptr = fopen("/Users/joe/Google Drive/Embedded Systems/Course/Egypt FWD/Embedded Systems Professional Nanodegree Program/Tasks/Payment-App/Payment-App/File Handling/Accounts_DB.txt","r");
+    File_Ptr = fopen("Accounts_DB.txt","r");
     
     for(int C=0 ; C<Number_of_Max_Bank_Customers ; C++)
     {
@@ -27,7 +27,7 @@ EN_FIle_Handling_t Import_Transactions_Data(ST_transaction_t *Transactions_Datab
     
     FILE *File_Ptr;
     
-    File_Ptr = fopen("/Users/joe/Google Drive/Embedded Systems/Course/Egypt FWD/Embedded Systems Professional Nanodegree Program/Tasks/Payment-App/Payment-App/File Handling/Transactions_DB.txt","r");
+    File_Ptr = fopen("Transactions_DB.txt","r");
     
     for(int C=0 ; C<Number_of_Max_Transactions ; C++)
     {
@@ -60,7 +60,7 @@ EN_FIle_Handling_t Export_Transactions_Data(ST_transaction_t *Transactions_Datab
 {
     FILE *File_Ptr;
     
-    File_Ptr = fopen("/Users/joe/Google Drive/Embedded Systems/Course/Egypt FWD/Embedded Systems Professional Nanodegree Program/Tasks/Payment-App/Payment-App/File Handling/Transactions_DB.txt","w");
+    File_Ptr = fopen("Transactions_DB.txt","w");
     
     for(int C=0 ; C<= Current_Transaction_Sequence_Num ; C++)
     {
@@ -102,7 +102,7 @@ EN_FIle_Handling_t Export_Bank_Server_Data(ST_accountsDB_t *Accounts_Database)
 {
     FILE *File_Ptr;
     
-    File_Ptr = fopen("/Users/joe/Google Drive/Embedded Systems/Course/Egypt FWD/Embedded Systems Professional Nanodegree Program/Tasks/Payment-App/Payment-App/File Handling/Accounts_DB.txt","w");
+    File_Ptr = fopen("Accounts_DB.txt","w");
     
     for(int C=0 ; C<Number_of_Max_Bank_Customers ; C++)
     {
