@@ -127,13 +127,13 @@ EN_terminalError_t Terminal_Module(ST_cardData_t *cardData, ST_terminalData_t *t
     
     if(isCardExpired(cardData, termData))
     {
-        printf("EXPIRED_CARD !");
+        printf("EXPIRED CARD !");
         return EXPIRED_CARD;
     }
     
     if(isValidCardPAN(cardData))
     {
-        printf("INVALID_CARD !");
+        printf("INVALID CARD !");
         return INVALID_CARD;
     }
     
@@ -142,7 +142,7 @@ EN_terminalError_t Terminal_Module(ST_cardData_t *cardData, ST_terminalData_t *t
     
     if(isBelowMaxAmount(termData))
     {
-        printf("EXCEED_MAX_AMOUNT !");
+        printf("Transaction Rejected (Exceeds Maximum Allowed Amount) ! \n");
         return EXCEED_MAX_AMOUNT;
     }
     

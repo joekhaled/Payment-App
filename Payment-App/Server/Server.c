@@ -163,15 +163,23 @@ void Server_Module(ST_transaction_t *transData)
     Transactions_Database[Current_Transaction_Sequence_Num].transState = transData->transState;
     Transactions_Database[Current_Transaction_Sequence_Num].transactionSequenceNumber = Current_Transaction_Sequence_Num;
     
-    if(transData->transState == APPROVED)
+    switch(transData->transState)
     {
-        Update_Account_Balance(&transData->terminalData);
-        printf("Transaction Approved ! \n");
+        case APPROVED:
+            Update_Account_Balance(&transData->terminalData);
+            printf("Transaction Approved ! \n");
+            break;
+        case DECLINED_INSUFFECIENT_FUND:
+            printf("Transaction Rejected : INSUFFECIENT FUND \n");
+            break;
+        case DECLINED_STOLEN_CARD:
+            printf("Transaction Rejected : STOLEN CARD \n");
+            break;
+        case INTERNAL_SERVER_ERROR:
+            printf("Transaction Rejected : INTERNAL SERVER ERROR \n");
+            break;
     }
-    else
-    {
-        printf("Transaction Rejected ! \n");
-    }
+
     printf("Transaction Saved ! \n\n");
 }
 
@@ -198,4 +206,13 @@ void Add_New_Account(void)
     
     printf("Enter Account Balance : ");
     scanf("%f",&Accounts_Database[Last_Account_Array_Number].balance);
+    
+    
+    printf("\n\nAccount Saved !");
+    printf("\n----------------------------------------\n");
+    printf("Go to Main Menu ? (Press Enter)");
+    
+    getchar();
+    getchar();
+    
 }
