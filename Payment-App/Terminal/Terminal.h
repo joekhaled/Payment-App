@@ -27,5 +27,4 @@ EN_terminalError_t getTransactionAmount(ST_terminalData_t *termData);
 EN_terminalError_t isBelowMaxAmount(ST_terminalData_t *termData);
 EN_terminalError_t setMaxAmount(ST_terminalData_t *termData);
 EN_terminalError_t Terminal_Module(ST_cardData_t *cardData, ST_terminalData_t *termData);
-
 #endif

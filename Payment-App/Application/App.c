@@ -5,7 +5,6 @@ void appStart(void)
 {
     Import_Bank_Server_Data(Accounts_Database);
     Import_Transactions_Data(Transactions_Database);
-    Export_Transactions_Data(Transactions_Database);
 }
 
 void appUpdate(void)
@@ -54,7 +53,10 @@ void New_Operation(void)
         New_Transaction.cardHolderData = New_Card;
         New_Transaction.terminalData = New_Terminal;
         
-        EN_serverError_t Transaction_Error = Server_Module(&New_Transaction);
+        Server_Module(&New_Transaction);
+        
+        Export_Transactions_Data(Transactions_Database);
+        Export_Bank_Server_Data(Accounts_Database);
     }
     
     getchar();

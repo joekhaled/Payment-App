@@ -19,6 +19,10 @@ EN_terminalError_t isCardExpired(ST_cardData_t *cardData, ST_terminalData_t *ter
     
     if(Card_Exp_Year > Trans_Exp_Year)
     {
+        return OKK;
+    }
+    else if(Card_Exp_Year == Trans_Exp_Year)
+    {
         if(Card_Exp_Month > Trans_Exp_Month)
         {
             return OKK;
@@ -144,3 +148,4 @@ EN_terminalError_t Terminal_Module(ST_cardData_t *cardData, ST_terminalData_t *t
     
     return OKK;
 }
+

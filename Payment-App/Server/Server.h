@@ -1,6 +1,7 @@
 #ifndef Server_h
 #define Server_h
 
+#include<string.h>
 #include "../Standard Types.h"
 #include "../Card/Card.h"
 #include "../Terminal/Terminal.h"
@@ -49,7 +50,6 @@ EN_serverError_t isAmountAvailable(ST_terminalData_t *termData);
 EN_serverError_t Update_Account_Balance(ST_terminalData_t *termData);
 EN_serverError_t saveTransaction(ST_transaction_t *transData);
 EN_serverError_t getTransaction(uint32_t transactionSequenceNumber, ST_transaction_t *transData);
-EN_serverError_t Server_Module(ST_transaction_t *transData);
 void Search_Transaction(void);
-
+void Server_Module(ST_transaction_t *transData);
 #endif

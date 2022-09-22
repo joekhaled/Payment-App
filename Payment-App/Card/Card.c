@@ -3,7 +3,6 @@
 
 EN_cardError_t getCardHolderName(ST_cardData_t *cardData)
 {
-    getchar();
     printf("Please Enter the Card Holder Name : ");
     
     uint8_t *ptr , Ch , Length = 0 ;
@@ -86,6 +85,7 @@ void Card_Module(ST_cardData_t *cardData)
 {
     printf("Please Enter Card Data :- \n");
     printf("---------------------------------------------------------\n");
+    getchar();
     while(getCardHolderName(cardData));
     while(getCardExpiryDate(cardData));
     while(getCardPAN(cardData));

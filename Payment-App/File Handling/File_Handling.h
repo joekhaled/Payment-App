@@ -14,6 +14,7 @@ typedef enum EN_FIle_Handling_t
 EN_FIle_Handling_t Import_Bank_Server_Data(ST_accountsDB_t *Accounts_Database);
 EN_FIle_Handling_t Import_Transactions_Data(ST_transaction_t *Transactions_Database);
 EN_FIle_Handling_t Export_Transactions_Data(ST_transaction_t *Transactions_Database);
+EN_FIle_Handling_t Export_Bank_Server_Data(ST_accountsDB_t *Accounts_Database);
 
 extern int Current_Transaction_Sequence_Num;
 

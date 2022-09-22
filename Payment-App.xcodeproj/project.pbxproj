@@ -193,8 +193,8 @@
 			files = (
 				D8AECBE028DAB348004879B9 /* File_Handling.c in Sources */,
 				D8AECBDD28DAB334004879B9 /* Card.c in Sources */,
-				D8AECBDE28DAB334004879B9 /* Terminal.c in Sources */,
 				D8AECBDC28DAB334004879B9 /* Server.c in Sources */,
+				D8AECBDE28DAB334004879B9 /* Terminal.c in Sources */,
 				D8AECBDF28DAB334004879B9 /* App.c in Sources */,
 				D87D554628D9C47B001211F8 /* main.c in Sources */,
 			);

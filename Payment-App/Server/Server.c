@@ -3,22 +3,20 @@
 ST_accountsDB_t Accounts_Database[Number_of_Max_Bank_Customers];
 ST_transaction_t Transactions_Database[Number_of_Max_Transactions];
 
-uint8_t Account_Array_Number=0;
-
-
+int Account_Array_Number=0;
 int Current_Transaction_Sequence_Num = 0;
 
 EN_transState_t recieveTransactionData(ST_transaction_t *transData)
 {
-    if(isValidAccount(&transData->cardHolderData) == ACCOUNT_NOT_FOUND)
+    if(isValidAccount(&transData->cardHolderData))
     {
         return DECLINED_STOLEN_CARD;
     }
-    else if(isAmountAvailable(&transData->terminalData) == LOW_BALANCE)
+    else if(isAmountAvailable(&transData->terminalData))
     {
         return DECLINED_INSUFFECIENT_FUND;
     }
-    else if(saveTransaction(transData) == SAVING_FAILED)
+    else if(saveTransaction(transData))
     {
         return INTERNAL_SERVER_ERROR;
     }
@@ -35,7 +33,7 @@ EN_serverError_t isValidAccount(ST_cardData_t *cardData)
     
     for(uint16_t C=0 ; C<Number_of_Max_Bank_Customers ; C++)
     {
-        if(cardData->primaryAccountNumber == Transactions_Database[C].cardHolderData.primaryAccountNumber)
+        if(!strcmp((const char*) &cardData->primaryAccountNumber , (char*)&Accounts_Database[C].primaryAccountNumber) )
         {
             Account_Array_Number = C;
             return OKkk;
@@ -43,7 +41,6 @@ EN_serverError_t isValidAccount(ST_cardData_t *cardData)
     }
     
     return ACCOUNT_NOT_FOUND;
-    
 }
 
 
@@ -71,15 +68,8 @@ EN_serverError_t Update_Account_Balance(ST_terminalData_t *termData)
 
 EN_serverError_t saveTransaction(ST_transaction_t *transData)
 {
-    if(1)//Export_Transactions_Data(Transactions_Database))
-    {
-        transData = &Transactions_Database[Current_Transaction_Sequence_Num+1];
-        return OKkk;
-    }
-    else
-    {
-        return SAVING_FAILED;
-    }
+    transData = &Transactions_Database[Current_Transaction_Sequence_Num];
+    return OKkk;
 }
 
 
@@ -95,7 +85,7 @@ EN_serverError_t getTransaction(uint32_t transactionSequenceNumber, ST_transacti
         }
     }
     
-    if(Transactions_Database[Account_Number].transactionSequenceNumber <= Current_Transaction_Sequence_Num)
+    if(transactionSequenceNumber <= Current_Transaction_Sequence_Num)
     {
         *transData = Transactions_Database[Account_Number];
         
@@ -124,7 +114,7 @@ void Search_Transaction(void)
         printf("Card Holder Name : %s\n",transData.cardHolderData.cardHolderName);
         printf("Card Primary Account Number : %s\n",transData.cardHolderData.primaryAccountNumber);
         printf("Card Expiry Date : %s\n\n",transData.cardHolderData.cardExpirationDate);
-        printf("Transaction Amount : %f\n",transData.terminalData.transAmount);
+        printf("Transaction Amount : %.2f\n",transData.terminalData.transAmount);
         printf("Transaction Date : %s\n",transData.terminalData.transactionDate);
         printf("Transaction State : ");
         
@@ -147,7 +137,7 @@ void Search_Transaction(void)
     else
     {
         printf("\n-----------------------------------------------------------\n");
-        printf("Transaction Not Found in DataBase! \n");
+        printf("Transaction Not Found in DataBase ! \n");
     }
     
     getchar();
@@ -158,15 +148,28 @@ void Search_Transaction(void)
     getchar();
 }
 
-EN_serverError_t Server_Module(ST_transaction_t *transData)
+void Server_Module(ST_transaction_t *transData)
 {
-    recieveTransactionData(transData);
+    transData->transState = recieveTransactionData(transData);
     
-    isValidAccount(&transData->cardHolderData);
+    Current_Transaction_Sequence_Num++;
+    strcpy((char*) &Transactions_Database[Current_Transaction_Sequence_Num].cardHolderData.cardHolderName , (const char*)&transData->cardHolderData.cardHolderName);
+    strcpy((char*) &Transactions_Database[Current_Transaction_Sequence_Num].cardHolderData.primaryAccountNumber , (const char*)&transData->cardHolderData.primaryAccountNumber );
+    strcpy((char*) &Transactions_Database[Current_Transaction_Sequence_Num].cardHolderData.cardExpirationDate , (const char*)&transData->cardHolderData.cardExpirationDate);
+    strcpy((char*) &Transactions_Database[Current_Transaction_Sequence_Num].terminalData.transactionDate , (const char*)&transData->terminalData.transactionDate);
+    Transactions_Database[Current_Transaction_Sequence_Num].terminalData.transAmount = transData->terminalData.transAmount;
+    Transactions_Database[Current_Transaction_Sequence_Num].terminalData.maxTransAmount = transData->terminalData.maxTransAmount;
+    Transactions_Database[Current_Transaction_Sequence_Num].transState = transData->transState;
+    Transactions_Database[Current_Transaction_Sequence_Num].transactionSequenceNumber = Current_Transaction_Sequence_Num;
     
-    isAmountAvailable(&transData->terminalData);
-    
-    saveTransaction(transData);
-    
-    return OKkk;
+    if(transData->transState == APPROVED)
+    {
+        Update_Account_Balance(&transData->terminalData);
+        printf("Transaction Approved ! \n");
+    }
+    else
+    {
+        printf("Transaction Rejected ! \n");
+    }
+    printf("Transaction Saved ! \n\n");
 }
